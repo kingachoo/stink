@@ -1,0 +1,26 @@
+def fade_in(colors, time_delay = .01):
+  mx = max(colors[0], max(colors[1], colors[2]))
+  r_inc = (colors[0] / mx)
+  g_inc = (colors[1] / mx)
+  b_inc = (colors[2] / mx)
+  r,g,b = (0,0,0)
+  while(r < mx and g < mx and b < mx):
+      r += r_inc
+      g += g_inc
+      b += b_inc
+      rgb.fill((int(r),int(g),int(b)))
+      rgb.show()
+      time.sleep(time_delay)
+def fade_out(colors, time_delay = 0.01):
+  mx = max(colors[0], max(colors[1], colors[2]))
+  r_inc = (colors[0] / mx)
+  g_inc = (colors[1] / mx)
+  b_inc = (colors[2] / mx)
+  r,g,b = (colors)
+  while(r >= 0 and g >= 0 and b >= 0):
+      r -= r_inc
+      g -= g_inc
+      b -= b_inc
+      rgb.fill((int(r), int(g), int(b)))
+      rgb.show()
+      time.sleep(.01)
